@@ -9,7 +9,7 @@ export class Voiture {
     vitesse;
     vitesseMax;
     dateMiseEnCirculation;
-    boitDeVitesse;
+    boiteDeVitesse;
     energie;
     categorie;
 
@@ -26,7 +26,7 @@ export class Voiture {
         vitesse : ${this.vitesse},
         vitesse maxi : ${this.vitesseMax},
         date de mise en circulation : ${this.dateMiseEnCirculation ? this.dateMiseEnCirculation.toLocaleDateString() : "<inconnu>"},
-        boite de vitesse : ${this.boitDeVitesse},
+        boite de vitesse : ${this.boiteDeVitesse},
         energie : ${this.energie},
         categorie : ${this.categorie}
         `

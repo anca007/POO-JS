@@ -11,7 +11,7 @@ v1.modele = "SLK";
 v1.kilometrage = 100;
 v1.vitesse = 0;
 v1.vitesseMax = 230;
-v1.boitDeVitesse = "automatique";
+v1.boiteDeVitesse = "automatique";
 v1.energie = "essence";
 v1.categorie = "cabriolet";
 

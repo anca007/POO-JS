@@ -1,6 +1,5 @@
 export class Voiture {
 
-
     #numeroSerie;
     immat;
     marque;
@@ -12,6 +11,59 @@ export class Voiture {
     boiteDeVitesse;
     energie;
     categorie;
+
+    //attributs de classe
+    static nbInstance = 0;
+    static totalKm = 0
+    static moyenneKm = 0
+
+    //constante
+    static NB_ROUES_ROULANTES = 4
+
+    constructor(
+        numeroSerie = null,
+        immat = null,
+        marque = null,
+        modele = null,
+        vitesseMax = null,
+        dateMiseEnCirculation = null,
+        vitesse = 0,
+        kilometrage = 0,
+        boiteDeVitesse = "manuel",
+        energie = "essence",
+        categorie = "berline"
+
+    ) {
+        console.log("Instance de voiture créée");
+
+        if (numeroSerie) this.#numeroSerie = numeroSerie;
+        if (immat) this.immat = immat;
+        if (marque) this.marque = marque;
+        if (modele) this.modele = modele;
+        if (vitesseMax) this.vitesseMax = vitesseMax;
+        if (dateMiseEnCirculation) this.dateMiseEnCirculation = dateMiseEnCirculation;
+
+        this.vitesse = vitesse
+        this.kilometrage = kilometrage;
+        this.boiteDeVitesse = boiteDeVitesse
+        this.energie = energie
+        this.categorie = categorie
+
+        //this.ajouterVoitureAuParc();
+    }
+
+
+    ajouterVoitureAuParc(){
+        Voiture.nbInstance++
+        Voiture.totalKm += this.kilometrage
+        Voiture.moyenneKm = (Voiture.totalKm / Voiture.nbInstance).toFixed(2)
+    }
+
+    retirerVoitureDuParc(){
+        Voiture.nbInstance--
+        Voiture.totalKm -= this.kilometrage
+        Voiture.moyenneKm = (Voiture.totalKm / Voiture.nbInstance).toFixed(2)
+    }
 
 
     afficherDetailVoiture() {

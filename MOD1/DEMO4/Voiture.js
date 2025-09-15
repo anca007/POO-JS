@@ -13,6 +13,33 @@ export class Voiture {
     energie;
     categorie;
 
+    //attributs de classe
+    static nbInstance = 0;
+    static totalKm = 0
+    static moyenneKm = 0
+
+    //constante
+    static NB_ROUES_ROULANTES = 4
+
+    constructor() {
+        //code appelé lors de l'instanciation
+        console.log("L'instance de voiture est crée")
+        //Voiture.nbInstance++
+        //this.ajouterVoitureAuParc()
+    }
+
+    ajouterVoitureAuParc(){
+        Voiture.nbInstance++
+        Voiture.totalKm += this.kilometrage
+        Voiture.moyenneKm = (Voiture.totalKm / Voiture.nbInstance).toFixed(2)
+    }
+
+    retirerVoitureDuParc(){
+        Voiture.nbInstance--
+        Voiture.totalKm -= this.kilometrage
+        Voiture.moyenneKm = (Voiture.totalKm / Voiture.nbInstance).toFixed(2)
+    }
+
 
     afficherDetailVoiture() {
         return `Voiture : immatriculation : ${this.immat},
