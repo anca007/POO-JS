@@ -52,7 +52,7 @@ console.group("Statistiques")
 console.log(`Nombre de clients: ${Client.nbClientCrees}`)
 console.groupEnd()
 
-let c2= new Client(789456, "Mario", "Mario", "10 allée des Champignons", new Date(1960, 1, 1), "798546546");
+let c2= new Client(789456, "Mario", "Mario", "10 allée des Champignons", new Date(1960, 1, 1));
 console.log(c2.afficherDonnesClient());
 console.group("Statistiques")
 console.log(`Nombre de clients: ${Client.nbClientCrees}`)

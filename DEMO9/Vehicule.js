@@ -1,36 +1,27 @@
 export class Vehicule {
 
     #numeroSerie;
-    immat;
-    marque;
-    modele;
-    vitesse;
-    vitesseMax;
-    dateMiseEnCirculation;
-    energie;
-    categorie;
     #proprietaire;
 
     constructor(
-        numeroSerie = null,
-        immat = null,
-        marque = null,
-        modele = null,
-        vitesseMax = null,
-        dateMiseEnCirculation = null,
-        vitesse = 0,
-        energie = null,
-        categorie = null
-
+        numeroSerie,
+        immat,
+        marque,
+        modele,
+        vitesseMax,
+        dateMiseEnCirculation,
+        energie,
+        categorie,
+        vitesse = 0
     ) {
-        if (numeroSerie) this.#numeroSerie = numeroSerie;
-        if (immat) this.immat = immat;
-        if (marque) this.marque = marque;
-        if (modele) this.modele = modele;
-        if (vitesseMax) this.vitesseMax = vitesseMax;
-        if (dateMiseEnCirculation) this.dateMiseEnCirculation = dateMiseEnCirculation;
-        if (energie) this.energie = energie;
-        if (categorie) this.categorie = categorie;
+        this.#numeroSerie = numeroSerie;
+        this.immat = immat;
+        this.marque = marque;
+        this.modele = modele;
+        this.vitesseMax = vitesseMax;
+        this.dateMiseEnCirculation = dateMiseEnCirculation;
+        this.energie = energie;
+        this.categorie = categorie;
         this.vitesse = vitesse
     }
 

@@ -1,16 +1,6 @@
 export class Voiture {
 
     #numeroSerie;
-    immat;
-    marque;
-    modele;
-    kilometrage;
-    vitesse;
-    vitesseMax;
-    dateMiseEnCirculation;
-    boiteDeVitesse;
-    energie;
-    categorie;
     #proprietaire;
 
     //attributs de classe
@@ -22,12 +12,12 @@ export class Voiture {
     static NB_ROUES_ROULANTES = 4
 
     constructor(
-        numeroSerie = null,
-        immat = null,
-        marque = null,
-        modele = null,
-        vitesseMax = null,
-        dateMiseEnCirculation = null,
+        numeroSerie,
+        immat,
+        marque,
+        modele,
+        vitesseMax,
+        dateMiseEnCirculation,
         vitesse = 0,
         kilometrage = 0,
         boiteDeVitesse = "manuel",
@@ -37,13 +27,12 @@ export class Voiture {
     ) {
         console.log("Instance de voiture créée");
 
-        if (numeroSerie) this.#numeroSerie = numeroSerie;
-        if (immat) this.immat = immat;
-        if (marque) this.marque = marque;
-        if (modele) this.modele = modele;
-        if (vitesseMax) this.vitesseMax = vitesseMax;
-        if (dateMiseEnCirculation) this.dateMiseEnCirculation = dateMiseEnCirculation;
-
+        this.#numeroSerie = numeroSerie;
+        this.immat = immat;
+        this.marque = marque;
+        this.modele = modele;
+        this.vitesseMax = vitesseMax;
+        this.dateMiseEnCirculation = dateMiseEnCirculation;
         this.vitesse = vitesse
         this.kilometrage = kilometrage;
         this.boiteDeVitesse = boiteDeVitesse

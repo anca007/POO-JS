@@ -1,16 +1,7 @@
 export class Voiture {
 
+    //Les attributs privés doivent être déclarés en dehors du constructeur
     #numeroSerie;
-    immat;
-    marque;
-    modele;
-    kilometrage;
-    vitesse;
-    vitesseMax;
-    dateMiseEnCirculation;
-    boiteDeVitesse;
-    energie;
-    categorie;
 
     //attributs de classe
     static nbInstance = 0;
@@ -21,28 +12,26 @@ export class Voiture {
     static NB_ROUES_ROULANTES = 4
 
     constructor(
-        numeroSerie = null,
-        immat = null,
-        marque = null,
-        modele = null,
-        vitesseMax = null,
-        dateMiseEnCirculation = null,
+        numeroSerie,
+        immat,
+        marque,
+        modele,
+        vitesseMax,
+        dateMiseEnCirculation,
         vitesse = 0,
         kilometrage = 0,
         boiteDeVitesse = "manuel",
         energie = "essence",
         categorie = "berline"
-
     ) {
         console.log("Instance de voiture créée");
 
-        if (numeroSerie) this.#numeroSerie = numeroSerie;
-        if (immat) this.immat = immat;
-        if (marque) this.marque = marque;
-        if (modele) this.modele = modele;
-        if (vitesseMax) this.vitesseMax = vitesseMax;
-        if (dateMiseEnCirculation) this.dateMiseEnCirculation = dateMiseEnCirculation;
-
+        this.#numeroSerie = numeroSerie;
+        this.immat = immat;
+        this.marque = marque;
+        this.modele = modele;
+        this.vitesseMax = vitesseMax;
+        this.dateMiseEnCirculation = dateMiseEnCirculation;
         this.vitesse = vitesse
         this.kilometrage = kilometrage;
         this.boiteDeVitesse = boiteDeVitesse
@@ -53,13 +42,13 @@ export class Voiture {
     }
 
 
-    ajouterVoitureAuParc(){
+    ajouterVoitureAuParc() {
         Voiture.nbInstance++
         Voiture.totalKm += this.kilometrage
         Voiture.moyenneKm = (Voiture.totalKm / Voiture.nbInstance).toFixed(2)
     }
 
-    retirerVoitureDuParc(){
+    retirerVoitureDuParc() {
         Voiture.nbInstance--
         Voiture.totalKm -= this.kilometrage
         Voiture.moyenneKm = (Voiture.totalKm / Voiture.nbInstance).toFixed(2)

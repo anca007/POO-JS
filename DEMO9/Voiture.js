@@ -2,9 +2,6 @@ import {Vehicule} from "./Vehicule.js";
 
 export class Voiture extends Vehicule{
 
-
-    kilometrage;
-    boiteDeVitesse;
     //attributs de classe
     static nbInstance = 0;
     static totalKm = 0
@@ -14,12 +11,12 @@ export class Voiture extends Vehicule{
     static NB_ROUES_ROULANTES = 4
 
     constructor(
-        numeroSerie = null,
-        immat = null,
-        marque = null,
-        modele = null,
-        vitesseMax = null,
-        dateMiseEnCirculation = null,
+        numeroSerie,
+        immat ,
+        marque ,
+        modele,
+        vitesseMax,
+        dateMiseEnCirculation,
         vitesse = 0,
         kilometrage = 0,
         boiteDeVitesse = "manuel",
@@ -28,7 +25,7 @@ export class Voiture extends Vehicule{
 
     ) {
         console.log("Instance de voiture créée");
-        super(numeroSerie, immat, marque, modele, vitesseMax, dateMiseEnCirculation, vitesse, energie, categorie);
+        super(numeroSerie, immat, marque, modele, vitesseMax, dateMiseEnCirculation, energie, categorie, vitesse);
 
         this.kilometrage = kilometrage;
         this.boiteDeVitesse = boiteDeVitesse

@@ -1,10 +1,6 @@
 export class Client {
 
     #noClient;
-    nom;
-    prenom;
-    adresse;
-    dateNaissance;
     #noPermis;
 
     //attribut de classe
@@ -12,16 +8,16 @@ export class Client {
     //constante de classe
     static EST_CLIENT = true
 
-    constructor(noClient = null, nom = null, prenom = null, adresse = null, dateNaissance = null, noPermis = null) {
+    constructor(noClient, nom, prenom, adresse, dateNaissance, noPermis = "XXXXXXXXXXX") {
         //code appelé lors de l'instanciation
         console.log("L'instance de client est crée")
 
-        if(noClient) this.#noClient = noClient;
-        if(nom)this.nom = nom;
-        if(prenom)this.prenom = prenom;
-        if(adresse)this.adresse = adresse;
-        if(dateNaissance)this.dateNaissance = dateNaissance;
-        if(noPermis)this.#noPermis = noPermis;
+        this.#noClient = noClient;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.dateNaissance = dateNaissance;
+        this.#noPermis = noPermis;
 
         Client.ajouterClient()
     }

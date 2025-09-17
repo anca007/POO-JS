@@ -16,7 +16,7 @@ export class CalendarAvecRdv extends Calendar {
         const cells = this.calendarDiv.querySelectorAll(`.${CalendarAvecRdv.DAY_CELL_CLASS}`);
         cells.forEach((cell) => {
             cell.addEventListener("click", () => {
-                const day = parseInt(cell.innerText);
+                const day = cell.innerText;
                 this.showRdvForDay(day);
             });
         });
@@ -36,7 +36,7 @@ export class CalendarAvecRdv extends Calendar {
 
         const selectedDate = new Date(year, month, day);
 
-        // Filtrer les rendez-vous de ce jour
+        //Filtrer les rendez-vous de ce jour
         const rdvs = this.rendezVousData.filter(
             (rdv) =>
                 rdv.dateRDV.toLocaleDateString() === selectedDate.toLocaleDateString()
@@ -44,7 +44,7 @@ export class CalendarAvecRdv extends Calendar {
 
         const rdvDiv = document.getElementById(this.rdvId)
 
-        // Affichage dans le HTML
+        //Affichage dans le HTML
         rdvDiv.innerHTML = `<h2>Rendez-vous du ${selectedDate.toLocaleDateString()}</h2>`;
         if (rdvs.length === 0) {
             rdvDiv.innerHTML += "<p>Aucun rendez-vous.</p>";
