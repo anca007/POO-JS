@@ -9,7 +9,7 @@ export class Adresse {
         this.ville = ville;
     }
 
-    // Deuxième constructeur simulé (surcharge non dispo en JS)
+    // Deuxième constructeur simulé
     static fromSansMentions(numero, complNumero, rue, cp, ville) {
         return new Adresse(null, numero, complNumero, rue, cp, ville);
     }
